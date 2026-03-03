@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="signupapp.api/signupapp.api.csproj" />
+  <Project Path="SignupApp.Tests/SignupApp.Tests.csproj" Id="8aaad861-7862-46d8-aa98-a328d250ab67" />
 </Solution>
