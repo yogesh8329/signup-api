@@ -1,0 +1,6 @@
+@signupapp.api_HostAddress = http://localhost:5044
+
+GET {{signupapp.api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
