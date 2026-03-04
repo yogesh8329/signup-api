@@ -32,3 +32,12 @@ jobs:
 
     - name: Run Unit Tests
       run: dotnet test --no-build --verbosity normal
+      
+    - name: Publish API
+     run: dotnet publish signupapp.api/signupapp.api.csproj -c Release -o publish
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+     with:
+     name: signup-api-build
+     path: publish
