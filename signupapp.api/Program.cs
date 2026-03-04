@@ -12,11 +12,10 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 var app = builder.Build();
 
 // Configure pipeline
-if (app.Environment.IsDevelopment())
-{
+
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+
 
 app.UseHttpsRedirection();
 
