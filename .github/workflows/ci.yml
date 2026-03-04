@@ -41,3 +41,6 @@ jobs:
         with:
           name: signup-api-build
           path: publish
+
+      - name: Build Docker Image
+        run: docker build -t signup-api .
