@@ -16,28 +16,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: '8.0.x'
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
 
-    - name: Restore dependencies
-      run: dotnet restore
+      - name: Restore dependencies
+        run: dotnet restore
 
-    - name: Build project
-      run: dotnet build --no-restore
+      - name: Build project
+        run: dotnet build --no-restore
 
-    - name: Run Unit Tests
-      run: dotnet test --no-build --verbosity normal
-      
-    - name: Publish API
-     run: dotnet publish signupapp.api/signupapp.api.csproj -c Release -o publish
+      - name: Run Unit Tests
+        run: dotnet test --no-build --verbosity normal
 
-    - name: Upload Artifact
-      uses: actions/upload-artifact@v4
-     with:
-     name: signup-api-build
-     path: publish
+      - name: Publish API
+        run: dotnet publish signupapp.api/signupapp.api.csproj -c Release -o publish
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: signup-api-build
+          path: publish
