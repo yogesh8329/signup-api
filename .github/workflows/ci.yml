@@ -44,4 +44,12 @@ jobs:
           
       - name: Build Docker Image
         run: docker build -t signup-api ./signupapp.api
+       - name: Login to DockerHub
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+      - name: Tag Docker Image
+        run: docker tag signup-api rathod789/signup-api:latest
+
+       - name: Push Docker Image
+         run: docker push rathod789/signup-api:latest
       
